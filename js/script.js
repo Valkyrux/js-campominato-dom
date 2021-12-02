@@ -11,7 +11,7 @@ function activeChoice(choice, option1, option2, option3) {
         getactivableDivOnDOM(81, gameTable, "square-81", "active", "mine", 16, "stop-hover");
     } else if(choice.value == option3.value){
         main.innerHTML = "";
-        getactivableDivOnDOM(49, gameTable, "square-49", "active", "mine", 8, "stop-hover");
+        getactivableDivOnDOM(49, gameTable, "square-49", "active", "mine", 16, "stop-hover");
     }
     main.append(gameTable);
 }
@@ -23,11 +23,14 @@ function getactivableDivOnDOM(numberOfDiv, positionOnDOM, divClass, divActiveCla
     const checked = [];
     // costruisco i div assegnando le classi square e le classi mine in base all'array generato in precedenza
     for(let i = 0; i < numberOfDiv; i++) {
+        console.log("Soluzioni:")
         const div = document.createElement("div");
         div.classList.add(divClass);
         if(mines.includes(i + 1)) {
             div.classList.add(mine);
-        };
+        } else {
+            console.log(i + 1, "è SAFE");
+        }
         div.append(i + 1);
         div.addEventListener("click",
             function () {
@@ -46,7 +49,7 @@ function getactivableDivOnDOM(numberOfDiv, positionOnDOM, divClass, divActiveCla
 
                     positionOnDOM.childNodes[numberOfDiv].classList.add(divActiveClass);
                     giveValue("Hai perso", positionOnDOM.childNodes[numberOfDiv].childNodes[0]);
-                } else if (scoreCounter != numberOfDiv - 16) {
+                } else if (scoreCounter != numberOfDiv - 17) {
                     if(!(checked.includes(this))) {
                         giveValue(scoreCounter + 1, positionOnDOM.childNodes[numberOfDiv].childNodes[1].childNodes[1]);
                         checked.push(this);
@@ -58,7 +61,6 @@ function getactivableDivOnDOM(numberOfDiv, positionOnDOM, divClass, divActiveCla
                 }
             }
         );
-
         positionOnDOM.append(div);
     }
     const div = document.createElement("div");
