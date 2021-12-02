@@ -11,7 +11,7 @@ function activeChoice(choice, option1, option2, option3) {
         getactivableDivOnDOM(81, gameTable, "square-81", "active", "mine", 16, "stop-hover");
     } else if(choice.value == option3.value){
         main.innerHTML = "";
-        getactivableDivOnDOM(49, gameTable, "square-49", "active", "mine", 16, "stop-hover");
+        getactivableDivOnDOM(49, gameTable, "square-49", "active", "mine", 8, "stop-hover");
     }
     main.append(gameTable);
 }
