@@ -122,7 +122,7 @@ div[class *= square].active {
 }
 
 div[class *= square].active.mine {
-    background-color: red;
+    background-color: #b22222;
     color: white;
 }
 
