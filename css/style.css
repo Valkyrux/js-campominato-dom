@@ -141,8 +141,8 @@ div[class *= square].stop-hover:hover {
     top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 120px);
-    background-color: rgba(179, 179, 175, 0.2);
+    height: calc(100vh - 130px);
+    background-color: rgba(179, 179, 175, 0.4);
     justify-content: center;
     flex-direction: column;
     align-items: center;
